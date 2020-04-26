@@ -2,4 +2,10 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
+import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
+
+//Mock fontawesome icons
+jest.mock('@fortawesome/react-fontawesome', () => ({
+  FontAwesomeIcon: ({icon}) => <>ico-{icon}</>,
+}));
